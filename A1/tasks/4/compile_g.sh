@@ -2,7 +2,7 @@
 
     if [ "$1" != "" ] 
       then
-          as -o build/"$1".o "$1".s
+          as -g -o build/"$1".o "$1".s
 
           if [ $? -eq 0 ]
             then 
@@ -10,7 +10,7 @@
 
                 if [ $? -eq 0 ]
                   then 
-                      ./build/"$1"
+                      gdb build/"$1"
                 else
                     echo "Error during link process. Please check your code and try it again"
                 fi
