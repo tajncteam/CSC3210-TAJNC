@@ -6,7 +6,7 @@ ____
 ### **Part1**
 ___
 
-+ Identifying the components on the raspberry PI B+
++ Identifying the components on the Raspberry PI B+
     + Motherboard    : Single Board Computer (SBC)
     + Microprocessor : Quad-Core Multicore CPI
     + Memory (RAM)   : 1GB
@@ -19,12 +19,12 @@ ___
 + List three main differences between X86 (CISC) and ARM Raspberry PI (RISC). Justify you answer and use your own words.
     + CISC
         + Provides a larger and complex instructions set.
-        + Reduced numbers of register compared to the ARM architecture.
+        + Reduced numbers of registers compared to the ARM architecture.
         + Instruction set architecture implements a register–memory architecture.
         + Implement Von Neumann architecture design.
 
     + RISC
-        + Provides a reduced and simpler instructions set.
+        + It provides a reduced and simpler instructions set.
         + Reduced instruction requires simpler circuits resulting in the other hand, more physical space for the chip. 
         + Instruction set architecture implements a register–register architecture.
         + Implement Harvard architecture design.
@@ -55,15 +55,16 @@ ___
    + OpenMP is an application programming interface (API) that provides a multi-threading, shared model for applications. The #pragma is a compiler-specific directive. In OpenMP, pragmas are used to instanciate OpenMP objects or to control how the program works.
 
 + What applications benefit from multi-core (list four)?
-    + Application performance improvements.
-    + 
+    + Backend applications such as database and web servers.
+    + Photo and video editing applications such as Adobe Photoshop family.
+    + 3D modeling and rendering programs such as AutoCAD, Solidworks.
+    + Graphics-intensive games.
 
 + Why Multicore? (why not single core, list four)
     + Cost reduction.
     + Performance improvement.
     + Tremendous power savings.
-    + CPU clock speed cannot be higher than the speed of light. (clock speed is limited)
-    
+    + CPU clock speed cannot be higher than the speed of light. (clock speed is limited)    
 
 
 ### **Part2**
