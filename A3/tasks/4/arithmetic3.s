@@ -24,11 +24,11 @@ _start:
 
     ldr r2, =val3     @ load the memory address of val3 into r2
     ldrb r2, [r2]     @ load the value val3 into r2
-    add r1, r1, r2    @ add 16 to r1 => 14 + 16 : 30
+    adds r1, r1, r2   @ add 16 to r1 => 14 + 16 : 30
 
     ldr r3, =val1     @ load the memory address of val1 into r3
     ldrsb r3, [r3]    @ load the value val1 into r3
-    add r1, r1, r3    @ add r1 and r3 and store into r1 => 30 + (-60) : -30   
+    adds r1, r1, r3   @ add r1 and r3 and store into r1 => 30 + (-60) : -30   
 
     mov r7, #1        @ Program Termination: exit syscall
     svc #0            @ Program Termination: wake kernel
