@@ -82,7 +82,17 @@ ___
     Thus, 1110 0010 is the negative representation of -30d.
     ```
 + Examining CPSR register
-    ![screenshot](resources/screenshots/screen13.png)
+    ```
+        cpsr : 0x80000010
+                 |_________ 1 0 0 0
+                            | | | |
+                            | | | |_____ overflow bit
+                            | | |_______ carry bit
+                            | |_________ zero bit
+                            |___________ negative bit
+    ```
+
+    
 
 
 
