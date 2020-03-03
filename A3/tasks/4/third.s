@@ -1,7 +1,7 @@
 @ Third program
 
 .section .data
-    a: .short -2    @ 16-bit signed integer
+    a: .hword -2    @ 16-bit signed integer
 
 .section .text
 .globl _start

@@ -12,7 +12,7 @@ ___
 + Fixing the code (invalid datatype .shalfword)
 ```c
     .section .data
-        a: .short -2    @ 16-bit signed integer
+        a: .hword -2    @ 16-bit signed integer
 ```
 
 + Compiling the source code again
