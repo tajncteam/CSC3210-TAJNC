@@ -20,7 +20,7 @@ _start:
 
     ldr r1, =val2     @ load the memory address of val2 into r1
     ldrb r1, [r1]     @ load the value val2 into r1
-    add r1, r1, #3    @ add 3 to r1 => 11 + 3 : 14
+    adds r1, r1, #3   @ add 3 to r1 => 11 + 3 : 14
 
     ldr r2, =val3     @ load the memory address of val3 into r2
     ldrb r2, [r2]     @ load the value val3 into r2
