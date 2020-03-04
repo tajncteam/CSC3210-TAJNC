@@ -41,10 +41,11 @@ ___
 
 + List and briefly describe the types of Parallel Computer Memory Architectures. What type is used by OpenMP and why?
 
-    + **Uniform Memory Access (UMA) :** A single memory controller is used in this architecture. Equal access and access times to memory. 
+    + **Uniform Memory Access (UMA) :** A single memory controller is used in this architecture. Memory access time is balanced or equal. Used in time-sharing applications and general purpose applications.
 
-    + **Non-Uniform Memory Access (NUMA):** A different memory controller is used in this model. This architecture applies to real-time applications and time-critical applications.
+    + **Non-Uniform Memory Access (NUMA):** Multiple memory controllers are used in this model. Memory access time is not balanced or equal. Used in real-time applications and time-critical applications.
 
+    The hardware that OpenMP assumes is a shared-memory machine. These machines are divided into two groups: Symmetric Multiprocessor (SMP) and Non-Uniform Memory architecture  (NUMA). The computers nowadays (for instance an Intel Core I7 generation)  are called SMP machines but we have to keep in mind that these machines also come with processor cache. The cache hierarchy means different processors have different costs to access different address ranges, it means a NUMA system. Any multiprocessor CPU with a cache is a NUMA system. For instance, a block of memory sitting in a cache region close to a processor has much faster access time than it's far away. OpenMP is designed for multi-processor, shared memory machines which following Uniform Memory Access (UMA) architecture but we have also to keep in mind the important fact about the cache hierarchy.
 
 + Compare Shared Memory Model with Threads Model?
     + **Shared Memory Model :**
@@ -60,7 +61,7 @@ ___
 
 
 + What is Parallel Programming?
-    + Type of computation where tasks can be divided into smaller pieces and can be executed simultaneously in order to solve a problem.
+    + Computation model where tasks can be divided into smaller pieces and can be executed simultaneously in order to solve a problem.
 
 + What is system on chip (SoC)? Does Raspberry PI use system on SoC?
     + Integrated circuit that integrates all components of a computer on one chip. Raspberry PI use an ARM1176JZF-S 700MHz CPU system. 
