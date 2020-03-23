@@ -5,22 +5,24 @@ ____
 ### **Part1**
 ___
 
-+ What is race condition?
++ **What is race condition?**
 
     + It's a behavior that can happen on electronics, software, or another system in which the output depends on the sequence of events. When race conditions arise in software, in case the events do not occur as the developer wanted, a fault happens.
 
-+ Why race condition is difficult to reproduce and debug?
++ **Why race condition is difficult to reproduce and debug?**
     + Because the software bug can disappears or alters its behavior when an attempt to debug the error is made. When trying to recreate the bug or using a debugger, the error may change or even disappear.
 
-+ How can it be fixed? Provide an example from your Project_A3 (see spmd2.c)
++ **How can it be fixed? Provide an example from your Project_A3 (see spmd2.c)**
     + You can use synchronization to protect data conflicts but synchronization is an expensive operation. As an alternative, as a developer, you can change how data is accessed to minimize the need for synchronization. As an example, let's use the issue that happened during the project A2 for the program: spmd2.c. He had a scenario where multiple threads were updating one shared variable (id) which is an example of race condition. To fix this issue, we changed the code to make the variable id private for each thread.
 
-+ Summaries the Parallel Programming Patterns section in the “Introduction to Parallel Computing_3.pdf” (two pages) in your own words (one paragraph, no more than 150
-words).
++ **Summaries the Parallel Programming Patterns section in the “Introduction to Parallel Computing_3.pdf” (two pages) in your own words (one paragraph, no more than 150
+words).**
+    + Parallel Programming Patterns provides a "cookbook" as a guide for developers to achieve parallel computing. There are two main categories for parallel programming patterns: Strategies and Concurrent Execution Mechanisms. Strategies define which algorithm to be used and which implementation strategy will be used during the development cycle. Concurrent Execution Mechanisms are divided into two main categories: Process/Thread control and Coordination. Process & thread control manage how the processing units running on CPU are controlled at run time. Coordination defines the number of parallel tasks desired to complete the parallel computation task. For coordination patterns, we also have two main sub-categories: message passing and mutual exclusion. In the message-passing model,  parallel processes exchange data through passing messages to one another. The mutual exclusion model prevents simultaneous access to a shared resource. Hybrid computation is becoming a popular parallel implementation widely using for a cluster of computers.
 
-+ In the section “Categorizing Patterns” in the “Introduction to Parallel Computing_3.pdf” compare the following:
 
-    + Collective synchronization (barrier) with Collective communication (reduction)
++ **In the section “Categorizing Patterns” in the “Introduction to Parallel Computing_3.pdf” compare the following:**
+
+    + ***Collective synchronization (barrier) with Collective communication (reduction)***
         + All the processes are reached to a specific point before executing. 
 
         + Acts as a reduction since once the process of the communicator collects data from all other processes and performs an operation to find the result. 
@@ -29,15 +31,15 @@ words).
 
         + It acts as a barrier since it blocks the process until all other processes are being reached to synchronization point successfully.
 
-    + Master-worker with fork join
+    + ***Master-worker with fork join***
         + A master or main process is being divided into small chunks which inturn being distributed to several worker processes wherein in Fork-Join pattern which is used to execute parallel lightweight processes and threads.
 
-+ Dependency: Using your own words and explanation, answer the following:
++ **Dependency: Using your own words and explanation, answer the following:**
 
-    + Where can we find parallelism in programming?
+    + ***Where can we find parallelism in programming?***
         + Techniques to make programs faster by performing several computations at the same time. The most common use is in web search engines, applications, and multimedia technologies.        
 
-    + What is dependency and what are its types (provide one example for each)?
+    + ***What is dependency and what are its types (provide one example for each)?***
         + When one operation depends on an earlier operation to complete and produce a result before this later operation can be performed.
 
         + **Types of Dependencies:** 
@@ -45,7 +47,7 @@ words).
             + **Data :** How different pieces of data are related and affect each other during execution.
             + **Loop :** Almost always involves the study array access patterns.
 
-    + When a statement is dependent and when it is independent (Provide two examples)?
+    + **When a statement is dependent and when it is independent (Provide two examples)?**
         + **Dependent :** When the order of execution of two statements matter.
             + **Example :**
                 ```c
@@ -58,13 +60,13 @@ words).
                 int x=1;
                 int y=x;
                 ```
-    + When can two statements be executed in parallel?
+    + **When can two statements be executed in parallel?**
         + It can happen when the order of their execution does not affect the computation outcome. 
 
-    + How can dependency be removed?
+    + **How can dependency be removed?**
         + Changing the program in order to rearrange statements or eliminate statements.
 
-    + How do we compute dependency for the following two loops and what type/s of dependency?
+    + **How do we compute dependency for the following two loops and what type/s of dependency?**
 
     ```c
     for (i=0; i<100; i++) {        
@@ -78,6 +80,13 @@ words).
         b[i] = 2*i;   // statement 2
     }
     ```
+
+    + The dependency for the following two loops can be calculated by checking the resources that are shared inside of the instructions set In this case, variables i and the array a[i]. Both are modified in both loops.
+
+    On the first loop, for the instruction S1:a[i] = i:
+a[i] is dependent on variable i and a[i] value will be changed only after reading i value, the dependency type is real dependency.
+
+    On the second loop, for the instruction  S1:a[i]= i, the dependency type is real dependency. For the instruction S2: b[i] = 2*i the dependency type is also real dependency.
 
 
 ### **Part2**
