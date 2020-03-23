@@ -6,6 +6,7 @@ ____
 ___
 
 + What is race condition?
+
     + It's a behavior that can happen on electronics, software, or another system in which the output depends on the sequence of events. When race conditions arise in software, in case the events do not occur as the developer wanted, a fault happens.
 
 + Why race condition is difficult to reproduce and debug?
