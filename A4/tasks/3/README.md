@@ -108,19 +108,24 @@ ___
     + Compiled and linked the program.
     ![screenshot](resources/screen1.png)
 
-    + Created a program trap-working.c [trap-working.c](trap-working.c).
-
-    + Compiled and linked the program.
-    ![screenshot](resources/screen2.png)
-
     + Program execution
     ![screenshot](resources/screen3.png)
 
     + Running trap-notworking four times to emphasize the issue:
     ![screenshot](resources/screen4.png)
 
-    **Note:**
-        + The clause ***reduction(+: integral)*** solved the shared memory issue. The OpenMP reduction clause lets you specify one or more thread-private variables that are subject to a reduction operation at the end of the parallel region.
+    + **Note:** for each execution, the integral result is changing.
+
+    + Created a program trap-working.c [trap-working.c](trap-working.c)
+
+    + Compiled and linked the program.
+    ![screenshot](resources/screen2.png)
+
+    + Program execution
+    ![screenshot](resources/screen11.png)
+
+    + **Note:**
+        + The clause ***reduction(+: integral)*** solved the shared memory issue (race condition). The OpenMP reduction clause lets you specify one or more thread-private variables that are subject to a reduction operation at the end of the parallel region.
 
 
 + **3.0 Coordination: Synchronization with a Barrier**
