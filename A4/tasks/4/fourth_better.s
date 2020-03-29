@@ -25,12 +25,11 @@ _start:
     ldr r1, [r1]        @ load the value x into r1
 
     cmp r1, #0          @ 
-    bne thenpart        @ branch on not equal (Z==0) to the thenpart
+    bne endofif         @ branch on not equal (Z==0) to the endofif
 
-    thenpart: 
-        mov r2, #1
-        ldr r3, =y      @ load the memory address of y into r3
-        str r2, [r3]    @ load r2 register value into y memory address
+    mov r2, #1
+    ldr r3, =y          @ load the memory address of y into r3
+    str r2, [r3]        @ load r2 register value into y memory address
     
     endofif:
         mov r7, #1      @ Program Termination: exit syscall
